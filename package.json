@@ -33,7 +33,9 @@
   },
   "dependencies": {
     "envify": "~1.2.1",
+    "express": "^4.13.3",
     "lodash": "^3.7.0",
+    "passbook": "^2.1.1",
     "react": "^0.13.2",
     "react-router": "^0.13.2"
   },
