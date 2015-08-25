@@ -15,15 +15,19 @@ var Home = React.createClass({
   
   addToPassbook: function() {
     this.setState({loading: true});
+//     var url = 'http://192.168.1.58:5000';
+    var url = 'http://passwallet.pw';
     var desc = this.refs.description.getDOMNode().value;
     var address = this.refs.address.getDOMNode().value;
+    if (address.length < 2) {
+      return;
+    }
     var iframe = document.createElement('iframe');
-    iframe.id = "IFRAMEID";
     iframe.style.display = 'none';
     document.body.appendChild(iframe);
-    iframe.src = 'http://192.168.1.58:5000/pass?wallet='+address+'&description='+desc;
+    iframe.src = url+'/pass?wallet='+address+'&description='+desc;
     iframe.addEventListener("load", function () {
-
+      document.body.removeChild(iframe);
     });
 
   },
