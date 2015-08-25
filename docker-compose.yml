@@ -1,0 +1,4 @@
+passWallet:
+  build: .
+  ports:
+   - "80:5000"
