@@ -8,8 +8,8 @@ var template = createTemplate("storeCard", {
   backgroundColor:    "rgb(65,83,173)",
   labelColor:         "rgb(255,255,255)",
   foregroundColor:    "rgb(255,255,255)",
-  logoText:           "PassWallet",
-  organizationName:   ""
+  logoText:           "",
+  organizationName:   "Pass Wallet"
 });
 template.keys("certificates", "walletpass");
 template.loadImagesFrom("build/images/");
@@ -28,18 +28,16 @@ app.get('/pass', function(req, res) {
   var wallet = req.query.wallet;
   var pass = template.createPass({
     serialNumber:  wallet,
-    description:   "awesome",
+    description:   "Pass Wallet",
     barcode: {
       "message" : wallet,
       "format" : "PKBarcodeFormatQR",
       "messageEncoding" : "iso-8859-1"
     }
   });
-  pass.backFields.add({ key: "name", label: "Name", value: req.query.description});
-  pass.backFields.add({ key: "address", label: "Public Address", value: wallet});
-
+  pass.backFields.add({ key: "name", label: " ", value: req.query.description});
   pass.primaryFields.add({ key: "name", label: "Name", value: req.query.description});
-  pass.secondaryFields.add({ key: "wallet", label: "Wallet", value: wallet});
+//   pass.secondaryFields.add({ key: "wallet", label: "Wallet", value: wallet});
   pass.render(res, function(error) {
     if (error)
       console.error(error);
