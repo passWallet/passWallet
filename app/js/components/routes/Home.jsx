@@ -39,7 +39,7 @@ var Home = React.createClass({
         <br/>
         <br/>
         <label className="address">Wallet Addresse</label>
-        <input ref="address" type="text" value="12wxKyqaVbCx5AAqy2AdnbAVAzxVtKyPzL" placeholder="Wallet public address"/>
+        <input ref="address" type="text" placeholder="Wallet public address"/>
         <br/><br/>
         <label className="description">Description</label>
         <input ref="description" type="text" placeholder="Description (optional)"/>
