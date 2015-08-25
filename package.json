@@ -6,8 +6,12 @@
       "browserify-shim"
     ]
   },
-  "browser": {},
-  "browserify-shim": {},
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.min.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
   "devDependencies": {
     "bower-files": "^2.0.0",
     "browser-sync": "^2.6.4",

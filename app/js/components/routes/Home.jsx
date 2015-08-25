@@ -15,7 +15,16 @@ var Home = React.createClass({
   
   addToPassbook: function() {
     this.setState({loading: true});
-    console.log('adding...');
+
+    var iframe = document.createElement('iframe');
+    iframe.id = "IFRAMEID";
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    iframe.src = 'http://localhost:5000/pass';
+    iframe.addEventListener("load", function () {
+
+    });
+
   },
   
   //🚗🐰🐇😎👏

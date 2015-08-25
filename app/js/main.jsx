@@ -1,4 +1,5 @@
 var React = require('react');
+window.$ = require('jquery');
 
 /* ROUTES */
 var App = require('./components/App.jsx');
