@@ -9,7 +9,7 @@ var template = createTemplate("storeCard", {
   labelColor:         "rgb(255,255,255)",
   foregroundColor:    "rgb(255,255,255)",
   logoText:           "PassWallet",
-  organizationName:   "PassWallet"
+  organizationName:   ""
 });
 template.keys("certificates", "walletpass");
 template.loadImagesFrom("build/images/");
@@ -47,7 +47,8 @@ app.get('/pass', function(req, res) {
 });
 
 app.get('*', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+  var dir = __dirname || './build';
+  res.sendFile(dir + '/index.html');
 });
 
 
