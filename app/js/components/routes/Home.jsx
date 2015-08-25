@@ -15,12 +15,13 @@ var Home = React.createClass({
   
   addToPassbook: function() {
     this.setState({loading: true});
-
+    var desc = this.refs.description.getDOMNode().value;
+    var address = this.refs.address.getDOMNode().value;
     var iframe = document.createElement('iframe');
     iframe.id = "IFRAMEID";
     iframe.style.display = 'none';
     document.body.appendChild(iframe);
-    iframe.src = 'http://localhost:5000/pass';
+    iframe.src = 'http://192.168.1.58:5000/pass?wallet='+address+'&description='+desc;
     iframe.addEventListener("load", function () {
 
     });
@@ -38,10 +39,10 @@ var Home = React.createClass({
         <br/>
         <br/>
         <label className="address">Wallet Addresse</label>
-        <input type="text" placeholder="Wallet public address"/>
+        <input ref="address" type="text" value="12wxKyqaVbCx5AAqy2AdnbAVAzxVtKyPzL" placeholder="Wallet public address"/>
         <br/><br/>
         <label className="description">Description</label>
-        <input type="text" placeholder="Description (optional)"/>
+        <input ref="description" type="text" placeholder="Description (optional)"/>
         <br/><br/>
         <button onClick={this.addToPassbook}>Add to Passbook</button>
       </div>
