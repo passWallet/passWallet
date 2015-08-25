@@ -59,10 +59,12 @@ body {
 
 /* HOME */
 .home {
-  width: 100%;
   text-align: center;
   color: white;
   padding-top: 60px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
   .title {
     font-size: 60px;
     margin-bottom: 10px;
@@ -74,66 +76,48 @@ body {
     max-width: 400px;
     margin: auto;
   }
-  
-  .search {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 50px;
-    input {
-      @include placeholder(rgba(255, 255, 255, 0.4));
-      box-sizing: border-box;
-      height: 30px;
-      width: 45%;
-      min-width: 250px;
-      background: transparent;
-      color: white;
-      border: 0;
-      border-bottom: 2px solid #4DFFDE;
-      margin: 10px;
-      font-size: 20px;
-      font-weight: 200;
-      outline: none;
-      &.speed {
-        display: block;
-        width: 100px;
-        min-width: 100px;
-        margin: auto;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        font-size: 40px;
-        height: 50px;
-      }
+      
+  input {
+    @include placeholder(rgba(255, 255, 255, 0.4));
+    box-sizing: border-box;
+    height: 30px;
+    width: 45%;
+    min-width: 250px;
+    background: transparent;
+    color: white;
+    border: 0;
+    border-bottom: 2px solid #4DFFDE;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    outline: none;
+  }
+  label {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -3px;
+    font-size: 12px;
+    color: #4DFFDE;
+    &.speed {
+      margin-top: 17px;
+      margin-left: -50px;
     }
-    label {
-      position: absolute;
-      margin-left: 10px;
-      margin-top: -3px;
-      font-size: 12px;
-      color: #4DFFDE;
-      &.speed {
-        margin-top: 17px;
-        margin-left: -50px;
-      }
+  }
+  button {
+    background: white;
+    border: 0;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.16), 0px 2px 5px 0px rgba(0,0,0,0.26);
+    border-radius: 3px;
+    font-size: 16px;
+    color: #1d1d1d;
+    line-height: 21px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    &:hover {
+      cursor: pointer;
+      background: #EAEAEA;
     }
-    button {
-      background: white;
-      border: 0;
-      width: 120px;
-      height: 35px;
-      box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.16), 0px 2px 5px 0px rgba(0,0,0,0.26);
-      border-radius: 3px;
-      font-size: 16px;
-      color: #1d1d1d;
-      line-height: 21px;
-      margin-top: 20px;
-      &:hover {
-        cursor: pointer;
-        background: #EAEAEA;
-      }
-    }
-  }  
+  }
 }
 
 
