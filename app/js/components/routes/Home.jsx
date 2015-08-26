@@ -17,8 +17,8 @@ var Home = React.createClass({
   
   addToPassbook: function() {
     this.setState({loading: true});
-    var url = 'http://192.168.1.58:5000';
-//     var url = 'http://passwallet.pw';
+//     var url = 'http://192.168.1.58:5000';
+    var url = 'http://passwallet.pw';
     var desc = this.refs.description.getDOMNode().value;
     var address = this.refs.address.getDOMNode().value;
     if (address.length < 2) {
