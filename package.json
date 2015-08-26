@@ -41,7 +41,6 @@
     "lodash": "^3.7.0",
     "passbook": "^2.1.1",
     "react": "^0.13.2",
-    "react-input-color": "^1.6.0",
     "react-router": "^0.13.2"
   },
   "scripts": {

@@ -25,6 +25,7 @@
   }
 }
 
+
 /* Main.scss */
 $backgroundColor: #4153B0;
 body {
@@ -59,67 +60,75 @@ body {
 
 /* HOME */
 .home {
-  text-align: center;
-  color: white;
-  padding-top: 60px;
+  position: absolute;
   width: 100%;
-  max-width: 600px;
-  margin: auto;
-  .title {
-    font-size: 60px;
-    margin-bottom: 10px;
-    &.asshole {
-      -webkit-transition: all 0.2s ease;
-    }
-  }
-  .subtitle {
-    max-width: 400px;
-    margin: auto;
-  }
-      
-  input {
-    @include placeholder(rgba(255, 255, 255, 0.4));
-    box-sizing: border-box;
-    height: 30px;
-    width: 45%;
-    min-width: 250px;
-    background: transparent;
+  height: 100%;
+  .wrap {
+    text-align: center;
     color: white;
-    border: 0;
-    border-bottom: 2px solid #4DFFDE;
-    border-radius: 0;
-    margin: 10px;
-    font-size: 20px;
-    font-weight: 200;
-    outline: none;
-  }
-  label {
-    position: absolute;
-    margin-left: 10px;
-    margin-top: -3px;
-    font-size: 12px;
-    color: #4DFFDE;
-    &.speed {
-      margin-top: 17px;
-      margin-left: -50px;
+    padding-top: 60px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
+    .title {
+      font-size: 60px;
+      margin-bottom: 10px;
+      img.icon {
+        width: 100px;
+        margin-top: -5px;
+        margin-bottom: 20px;
+      }
+      img.typo {
+        width: 115px;
+      }
     }
-  }
-  button {
-    background: white;
-    border: 0;
-    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.16), 0px 2px 5px 0px rgba(0,0,0,0.26);
-    border-radius: 3px;
-    font-size: 16px;
-    color: #1d1d1d;
-    line-height: 21px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    &:hover {
-      cursor: pointer;
-      background: #EAEAEA;
+    .subtitle {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input {
+      @include placeholder(rgba(255, 255, 255, 0.4));
+      box-sizing: border-box;
+      height: 30px;
+      width: 45%;
+      min-width: 250px;
+      background: transparent;
+      color: white;
+      border: 0;
+      border-bottom: 2px solid #4DFFDE;
+      border-radius: 0;
+      margin: 10px;
+      font-size: 20px;
+      font-weight: 200;
+      outline: none;
+    }
+    label {
+      position: absolute;
+      margin-left: 10px;
+      margin-top: -3px;
+      font-size: 12px;
+      color: #4DFFDE;
+      &.speed {
+        margin-top: 17px;
+        margin-left: -50px;
+      }
+    }
+    button {
+      background: white;
+      border: 0;
+      box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.16), 0px 2px 5px 0px rgba(0,0,0,0.26);
+      border-radius: 3px;
+      font-size: 16px;
+      color: #1d1d1d;
+      line-height: 21px;
+      margin-top: 20px;
+      padding: 10px 20px;
+      &:hover {
+        cursor: pointer;
+        background: #EAEAEA;
+      }
     }
   }
 }
-
-
-
