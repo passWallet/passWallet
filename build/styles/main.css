@@ -26,60 +26,69 @@ body {
 
 /* HOME */
 .home {
-  text-align: center;
-  color: white;
-  padding-top: 60px;
+  position: absolute;
   width: 100%;
-  max-width: 600px;
-  margin: auto; }
-  .home .title {
-    font-size: 60px;
-    margin-bottom: 10px; }
-    .home .title.asshole {
-      -webkit-transition: all 0.2s ease; }
-  .home .subtitle {
-    max-width: 400px;
-    margin: auto; }
-  .home input {
-    box-sizing: border-box;
-    height: 30px;
-    width: 45%;
-    min-width: 250px;
-    background: transparent;
+  height: 100%; }
+  .home .wrap {
+    text-align: center;
     color: white;
-    border: 0;
-    border-bottom: 2px solid #4DFFDE;
-    margin: 10px;
-    font-size: 20px;
-    font-weight: 200;
-    outline: none; }
-    .home input::-webkit-input-placeholder {
-      color: rgba(255, 255, 255, 0.4); }
-    .home input:-moz-placeholder {
-      color: rgba(255, 255, 255, 0.4); }
-    .home input::-moz-placeholder {
-      color: rgba(255, 255, 255, 0.4); }
-    .home input:-ms-input-placeholder {
-      color: rgba(255, 255, 255, 0.4); }
-  .home label {
-    position: absolute;
-    margin-left: 10px;
-    margin-top: -3px;
-    font-size: 12px;
-    color: #4DFFDE; }
-    .home label.speed {
-      margin-top: 17px;
-      margin-left: -50px; }
-  .home button {
-    background: white;
-    border: 0;
-    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16), 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
-    border-radius: 3px;
-    font-size: 16px;
-    color: #1d1d1d;
-    line-height: 21px;
-    margin-top: 20px;
-    padding: 10px 20px; }
-    .home button:hover {
-      cursor: pointer;
-      background: #EAEAEA; }
+    padding-top: 60px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto; }
+    .home .wrap .title {
+      font-size: 60px;
+      margin-bottom: 10px; }
+      .home .wrap .title img.icon {
+        width: 100px;
+        margin-top: -5px;
+        margin-bottom: 20px; }
+      .home .wrap .title img.typo {
+        width: 115px; }
+    .home .wrap .subtitle {
+      max-width: 400px;
+      margin: auto; }
+    .home .wrap input {
+      box-sizing: border-box;
+      height: 30px;
+      width: 45%;
+      min-width: 250px;
+      background: transparent;
+      color: white;
+      border: 0;
+      border-bottom: 2px solid #4DFFDE;
+      border-radius: 0;
+      margin: 10px;
+      font-size: 20px;
+      font-weight: 200;
+      outline: none; }
+      .home .wrap input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      .home .wrap input:-moz-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      .home .wrap input::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+      .home .wrap input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.4); }
+    .home .wrap label {
+      position: absolute;
+      margin-left: 10px;
+      margin-top: -3px;
+      font-size: 12px;
+      color: #4DFFDE; }
+      .home .wrap label.speed {
+        margin-top: 17px;
+        margin-left: -50px; }
+    .home .wrap button {
+      background: white;
+      border: 0;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16), 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+      border-radius: 3px;
+      font-size: 16px;
+      color: #1d1d1d;
+      line-height: 21px;
+      margin-top: 20px;
+      padding: 10px 20px; }
+      .home .wrap button:hover {
+        cursor: pointer;
+        background: #EAEAEA; }
