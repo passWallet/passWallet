@@ -1,13 +1,12 @@
 var React = require('react');
 var _ = require('lodash');
-var InputColor = require('react-input-color');
 
 var Home = React.createClass({
   
   getInitialState: function() {
     return {
       loading: false,
-      color: "#eeeeee"
+      color: "#4153B0"
     }
   },
   
@@ -34,31 +33,44 @@ var Home = React.createClass({
 
   },
   
-  handleChangeColor: function(color) {
-    
+  onColorInputChange: function(e) {
+    this.setState({
+      color: e.target.value
+    });
   },
   
   //🚗🐰🐇😎👏
   render: function() {    
     return (
-      <div className="home">
-        <h1 className="">PassWallet</h1>
-        <p className="subtitle">
-          {"Keep your bitcoin wallet in Passbook"}
-        </p>
-        <br/>
-        <br/>
-        <label className="address">Wallet Addresse</label>
-        <input ref="address" type="text" placeholder="Wallet public address"/>
-        <br/><br/>
-        <label className="description">Description</label>
-        <input ref="description" type="text" placeholder="Description (optional)"/>
-        <br/><br/>
-        <label className="description">Color</label>
-        <InputColor color={this.state.color} onChange={this.handleChangeColor} />
-        <br/><br/>
-        
-        <button onClick={this.addToPassbook}>Add to Passbook</button>
+      <div className="home" style={{backgroundColor:this.state.color}}>
+        <div className="wrap">
+          <h1 className="title">
+            <img className="typo" src="images/typo.png"/>
+            <br/>
+            <img className="icon" src="images/icon.png"/>
+          </h1>
+          <p className="subtitle">
+            {"Keep your bitcoin wallets in Passbook"}
+          </p>
+          <br/>
+          <br/>
+          <label className="address">Wallet Addresse</label>
+          <input ref="address" type="text" placeholder="Wallet public address"/>
+          <br/><br/>
+          <label className="description">Description</label>
+          <input ref="description" type="text" placeholder="Description (optional)"/>
+          <br/><br/>
+          <label className="description">Color</label>
+          <input
+            type="color"
+            value={this.state.color}
+            onChange={this.onColorInputChange}
+          />
+  
+          <br/><br/>
+          
+          <button onClick={this.addToPassbook}>Add to Passbook</button>
+        </div>
       </div>
     );
   },
