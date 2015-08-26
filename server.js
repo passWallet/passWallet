@@ -2,7 +2,7 @@ var express = require('express');
 var createTemplate = require("passbook");
 var fs = require('fs');
 
-var template = createTemplate("storeCard", {
+var template = createTemplate("generic", {
   passTypeIdentifier: "pass.pw.passwallet",
   teamIdentifier:     "EV548SXF22",
   backgroundColor:    "rgb(65,83,173)",
@@ -11,7 +11,7 @@ var template = createTemplate("storeCard", {
   logoText:           "",
   organizationName:   "Pass Wallet"
 });
-template.keys("certificates", "walletpass");
+template.keys("certificates", process.env.PASSWALLET_KEY_SECRET);
 template.loadImagesFrom("build/images/");
 
 var app = express();
@@ -35,12 +35,18 @@ app.get('/pass', function(req, res) {
       "messageEncoding" : "iso-8859-1"
     }
   });
-  pass.backFields.add({ key: "name", label: " ", value: req.query.description});
-  pass.primaryFields.add({ key: "name", label: "Name", value: req.query.description});
-//   pass.secondaryFields.add({ key: "wallet", label: "Wallet", value: wallet});
+  pass.primaryFields.add({ key: "name", label: "Description", value: req.query.description});
+  pass.backFields.add({ key: "backname", label: "Description", value: req.query.description});
+  pass.backFields.add({ key: "address", label: "Wallet address", value: wallet});
+  pass.backFields.add({ key: "url", label: "Url", value: "bitcoin://"+wallet});
+  pass.backFields.add({ key: "passwallet", label: "PassWallet", value: "This card has been generated using passwallet.pw"});
+  pass.backFields.add({ key: "contact", label: "Support", value: "Need help or just want to reach us? contact@passwallet.pw"});
+  pass.backFields.add({ key: "made", label: "", value: "Made with ❤️ by @kemcake and @loladam"});
+  pass.backFields.add({ key: "enjoy", label: "", value: "Enjoy ✌️"});
+
   pass.render(res, function(error) {
     if (error)
-      console.error(error);
+      console.log(error);
   });    
 });
 
