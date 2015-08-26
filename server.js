@@ -11,7 +11,7 @@ var template = createTemplate("generic", {
   logoText:           "",
   organizationName:   "Pass Wallet"
 });
-template.keys("certificates", "walletpass");
+template.keys("certificates", process.env.PASSWALLET_KEY_SECRET);
 template.loadImagesFrom("build/images/");
 
 var app = express();
@@ -36,7 +36,7 @@ app.get('/pass', function(req, res) {
     }
   });
   pass.primaryFields.add({ key: "name", label: "Description", value: req.query.description});
-  pass.backFields.add({ key: "name", label: "Description", value: req.query.description});
+  pass.backFields.add({ key: "backname", label: "Description", value: req.query.description});
   pass.backFields.add({ key: "address", label: "Wallet address", value: wallet});
   pass.backFields.add({ key: "url", label: "Url", value: "bitcoin://"+wallet});
   pass.backFields.add({ key: "passwallet", label: "PassWallet", value: "This card has been generated using passwallet.pw"});
@@ -46,7 +46,7 @@ app.get('/pass', function(req, res) {
 
   pass.render(res, function(error) {
     if (error)
-      console.error(error);
+      console.log(error);
   });    
 });
 

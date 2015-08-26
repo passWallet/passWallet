@@ -1,11 +1,13 @@
 var React = require('react');
 var _ = require('lodash');
+var InputColor = require('react-input-color');
 
 var Home = React.createClass({
   
   getInitialState: function() {
     return {
-      loading: false
+      loading: false,
+      color: "#eeeeee"
     }
   },
   
@@ -15,8 +17,8 @@ var Home = React.createClass({
   
   addToPassbook: function() {
     this.setState({loading: true});
-//     var url = 'http://192.168.1.58:5000';
-    var url = 'http://passwallet.pw';
+    var url = 'http://192.168.1.58:5000';
+//     var url = 'http://passwallet.pw';
     var desc = this.refs.description.getDOMNode().value;
     var address = this.refs.address.getDOMNode().value;
     if (address.length < 2) {
@@ -30,6 +32,10 @@ var Home = React.createClass({
       document.body.removeChild(iframe);
     });
 
+  },
+  
+  handleChangeColor: function(color) {
+    
   },
   
   //🚗🐰🐇😎👏
@@ -48,6 +54,10 @@ var Home = React.createClass({
         <label className="description">Description</label>
         <input ref="description" type="text" placeholder="Description (optional)"/>
         <br/><br/>
+        <label className="description">Color</label>
+        <InputColor color={this.state.color} onChange={this.handleChangeColor} />
+        <br/><br/>
+        
         <button onClick={this.addToPassbook}>Add to Passbook</button>
       </div>
     );
