@@ -41,13 +41,13 @@ app.get('/pass', function(req, res) {
   pass.backFields.add({ key: "url", label: "Url", value: "bitcoin://"+wallet});
   pass.backFields.add({ key: "passwallet", label: "PassWallet", value: "This card has been generated using passwallet.pw"});
   pass.backFields.add({ key: "contact", label: "Support", value: "Need help or just want to reach us? contact@passwallet.pw"});
-  pass.backFields.add({ key: "made", label: "", value: "Made with ❤️ by @kemcake and @loladam"});
+  pass.backFields.add({ key: "made", label: "", value: "Made with ❤️ by @kemcake and @lola_dam"});
   pass.backFields.add({ key: "enjoy", label: "", value: "Enjoy ✌️"});
 
   pass.render(res, function(error) {
     if (error)
       console.log(error);
-  });    
+  });
 });
 
 app.get('*', function(req, res) {
