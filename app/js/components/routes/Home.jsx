@@ -2,18 +2,18 @@ var React = require('react');
 var _ = require('lodash');
 
 var Home = React.createClass({
-  
+
   getInitialState: function() {
     return {
       loading: false,
       color: "#4153B0"
     }
   },
-  
+
   componentDidMount: function() {
 
   },
-  
+
   addToPassbook: function() {
     this.setState({loading: true});
 //     var url = 'http://192.168.1.58:5000';
@@ -32,15 +32,15 @@ var Home = React.createClass({
     });
 
   },
-  
+
   onColorInputChange: function(e) {
     this.setState({
       color: e.target.value
     });
   },
-  
+
   //🚗🐰🐇😎👏
-  render: function() {    
+  render: function() {
     return (
       <div className="home" style={{backgroundColor:this.state.color}}>
         <div className="wrap">
@@ -55,10 +55,10 @@ var Home = React.createClass({
           <br/>
           <br/>
           <label className="address">Wallet Addresse</label>
-          <input ref="address" type="text" placeholder="Wallet public address"/>
+          <input ref="address" type="text" placeholder="Wallet public address" defaultValue="38W25PhVqZBz1nPJTVvnubMBL51YwiuTDy"/>
           <br/><br/>
           <label className="description">Description</label>
-          <input ref="description" type="text" placeholder="Description (optional)"/>
+          <input ref="description" type="text" placeholder="Description (optional)" defaultValue="passwallet"/>
           <br/><br/>
           <label className="description">Color</label>
           <input
@@ -66,9 +66,9 @@ var Home = React.createClass({
             value={this.state.color}
             onChange={this.onColorInputChange}
           />
-  
+
           <br/><br/>
-          
+
           <button onClick={this.addToPassbook}>Add to Passbook</button>
         </div>
       </div>

@@ -38,7 +38,7 @@ body {
 /* NAVBAR */
 
 #navbar {
-  position: fixed;
+  //position: fixed;
   width: 100%;
   height: 40px;
   color: white;
@@ -57,10 +57,28 @@ body {
     }
   }}
 
+#footer {
+    width: 100%;
+    height: 40px;
+    //@include sticky-footer(40px); Need compass
+    color: white;
+    a {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+      font-size: 15px;
+      margin-top: 10px;
+      color: white;
+      text-decoration: none;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+}
 
 /* HOME */
 .home {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   .wrap {

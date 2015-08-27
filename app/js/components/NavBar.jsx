@@ -10,7 +10,7 @@ var NavBar = React.createClass({
 
   render: function() {
     return (
-      <div id="navbar">
+      <div id="footer">
         <a href="https://twitter.com/PassWallet"
           target="_blank">
           Twitter
