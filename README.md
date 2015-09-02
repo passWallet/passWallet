@@ -1,8 +1,8 @@
-# Parse React Sample app #
+# PassWallet #
 
-Todo app made with ReactJS and ParseReact
+A simple way to store your public address on iOS.
 
-[*working example*](http://alley.parseapp.com)
+[*passwallet.pw*](http://passwallet.pw)
 
 ## What's inside ?
 - React (JSX)
@@ -30,7 +30,7 @@ npm install
 ```
 
 ### Run gulp
-It will setup a server with live reload on `localhost:3000` 
+It will setup a server with live reload on `localhost:3000`
 ```
 gulp
 ```
